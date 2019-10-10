@@ -1,5 +1,6 @@
 <template>
   <q-page padding>
+	<button style="position: absolute; right: 10px" @click="counter++">{{ counter }}</button>
     <input v-model="message" @keyup="handleKeyup"
 	  @mouseleave="alertMessage"
 	/>
@@ -7,6 +8,9 @@
     <h5 
 	    v-if="message.length" class="border-grey">{{ message }}</h5>
 	<h6 v-else>No Message Entered</h6>
+
+	
+	<p>Uppercase Message: {{ messageUppercase() }} </p>
   </q-page>
 </template>
 
@@ -14,7 +18,8 @@
   export default {
     data() {
 	  return {
-		message: 'I love Vue.js OK'
+		message: 'I love Vue.js OK',
+		counter: 0
 	  }
 	},
 	methods: {
@@ -32,6 +37,9 @@
 	  },
 	  alertMessage() {
 		alert(this.message)
+	  },
+	  messageUppercase() {
+		return "DATA=".concat(this.message.toUpperCase())
 	  }
 	}
   }
