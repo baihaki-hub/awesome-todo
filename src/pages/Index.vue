@@ -14,7 +14,7 @@
   export default {
     data() {
 	  return {
-		message: 'I love Vue.js'
+		message: 'I love Vue.js OK'
 	  }
 	},
 	methods: {
